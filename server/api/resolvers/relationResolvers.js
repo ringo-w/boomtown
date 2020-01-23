@@ -3,11 +3,11 @@ const { ApolloError } = require("apollo-server");
 const relationResolvers = {
   User: {
     items(root, args, { pgResource }, info) {
-      return pgResource.getUserById(root.id);
+      return pgResource.getItemsForUser(root.id);
       // -------------------------------
     },
     borrowed(root, args, { pgResource }, info) {
-      return pgResource.getUserById(root.id);
+      return pgResource.getBorrowedItemsForUser(root.id);
     }
   },
 
