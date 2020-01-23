@@ -118,11 +118,8 @@ module.exports = postgres => {
               const itemid = insertNewItem.rows[0].id;
               console.log(tagsQueryString([...tags], itemid, ""));
               const tagRelationshipQuery = {
-                text: `INSERT INTO itemtags(tagid, itemid) VALUES ${tagsQueryString(
-                  [...tags],
-                  itemid,
-                  ""
-                )}`,
+                text: `INSERT INTO itemtags(tagid, itemid) VALUES 
+                ${tagsQueryString([...tags], itemid, "")}`,
                 value: tags.map(tag => tag.id)
               };
 
