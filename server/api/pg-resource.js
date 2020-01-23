@@ -1,5 +1,5 @@
 function tagsQueryString(tags, itemid, result) {
-  for (i = tags.length; i > 0; i--) {
+  for (let i = tags.length; i > 0; i--) {
     result += `($${i}, ${itemid}),`;
   }
   return result.slice(0, -1) + ";";
@@ -140,7 +140,7 @@ module.exports = postgres => {
               const tagRelationshipQuery = {
                 text: `INSERT INTO itemtags(tagid, itemid) VALUES 
                 (${tagsQueryString([...tags], itemid, results)})`,
-                value: tags.map()[tag => tag.id]
+                value: tags.map(tag => tag.id)
               };
               // Insert tags
               // @TODO

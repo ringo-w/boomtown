@@ -2,12 +2,19 @@ const { ApolloError } = require("apollo-server");
 
 const relationResolvers = {
   User: {
-    items(root, args, { pgResource }, info) {
-      return pgResource.getItemsForUser(root.id);
-      // -------------------------------
+    async items(root, args, { pgResource }, info) {
+      try {
+        return await pgResource.getItemsForUser(root.id);
+      } catch (e) {
+        throw new ApolloError(e);
+      }
     },
-    borrowed(root, args, { pgResource }, info) {
-      return pgResource.getBorrowedItemsForUser(root.id);
+    async borrowed(root, args, { pgResource }, info) {
+      try {
+        return pgResource.getBorrowedItemsForUser(root.id);
+      } catch (e) {
+        throw new ApolloError(e);
+      }
     }
   },
 
@@ -20,12 +27,20 @@ const relationResolvers = {
       }
     },
 
-    tags(root, args, { pgResource }, info) {
-      return pgResource.getTagsForItem(root.id);
+    async tags(root, args, { pgResource }, info) {
+      try {
+        return await pgResource.getTagsForItem(root.id);
+      } catch (e) {
+        throw new ApolloError(e);
+      }
     },
 
-    borrower(root, args, { pgResource }, info) {
-      return pgResource.getUserById(root.borrowerid);
+    async borrower(root, args, { pgResource }, info) {
+      try {
+        return await pgResource.getUserById(root.borrowerid);
+      } catch (e) {
+        throw new ApolloError(e);
+      }
     }
   }
 };

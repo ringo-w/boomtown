@@ -123,10 +123,13 @@ const mutationResolvers = app => ({
   },
 
   logout(parent, args, context) {
-    context.req.res.clearCookie(app.get("JWT_COOKIE_NAME"));
+    //   context.req.res.clearCookie(app.get("JWT_COOKIE_NAME"));
     return true;
   },
   async addItem(parent, args, context, info) {
+    const { title, description, tags } = args.item;
+    const { pgResource } = context.pgResources;
+
     /**
      *  @TODO: Destructuring
      *
