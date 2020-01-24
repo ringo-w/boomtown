@@ -65,38 +65,57 @@ module.exports = postgres => {
       // -------------------------------
     },
     async getItems(idToOmit) {
-      const items = await postgres.query({
-        text: `SELECT * FROM items WHERE ownerid != $1`,
-        values: idToOmit ? [idToOmit] : []
-      });
-      return items.rows;
+      try {
+        const items = await postgres.query({
+          text: `SELECT * FROM items WHERE ownerid != $1`,
+          values: idToOmit ? [idToOmit] : []
+        });
+        return items.rows;
+      } catch (e) {
+        throw new Error(e);
+      }
     },
     async getItemsForUser(id) {
-      const items = await postgres.query({
-        text: `SELECT * FROM items WHERE items.ownerid = $1`,
-        values: [id]
-      });
-      return items.rows;
+      try {
+        const items = await postgres.query({
+          text: `SELECT * FROM items WHERE items.ownerid = $1`,
+          values: [id]
+        });
+        return items.rows;
+      } catch (e) {
+        throw new Error(e);
+      }
     },
     async getBorrowedItemsForUser(id) {
-      const items = await postgres.query({
-        text: `SELECT * FROM items WHERE items.borrowerid = $1 `,
-        values: [id]
-      });
-      return items.rows;
+      try {
+        const items = await postgres.query({
+          text: `SELECT * FROM items WHERE items.borrowerid = $1 `,
+          values: [id]
+        });
+        return items.rows;
+      } catch (e) {
+        throw new Error(e);
+      }
     },
     async getTags() {
-      const tags = await postgres.query(`select * from tags`);
-      return tags.rows;
+      try {
+        const tags = await postgres.query(`select * from tags`);
+        return tags.rows;
+      } catch (e) {
+        throw new Error(e);
+      }
     },
     async getTagsForItem(id) {
       const tagsQuery = {
         text: `SELECT * FROM tags INNER JOIN itemtags ON tags.id = itemtags.tagid WHERE itemtags.itemid = $1`, // @TODO: Advanced query Hint: use INNER JOIN
         values: [id]
       };
-
-      const tags = await postgres.query(tagsQuery);
-      return tags.rows;
+      try {
+        const tags = await postgres.query(tagsQuery);
+        return tags.rows;
+      } catch (e) {
+        throw new Error(e);
+      }
     },
     async saveNewItem({ item, user }) {
       return new Promise((resolve, reject) => {
@@ -116,7 +135,6 @@ module.exports = postgres => {
               };
               const insertNewItem = await postgres.query(newItemQuery);
               const itemid = insertNewItem.rows[0].id;
-              console.log(tagsQueryString([...tags], itemid, ""));
               const tagRelationshipQuery = {
                 text: `INSERT INTO itemtags(tagid, itemid) VALUES 
                 ${tagsQueryString([...tags], itemid, "")}`,
