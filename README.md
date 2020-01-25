@@ -1,4 +1,4 @@
-# Boomtown 
+# Boomtown
 
 ## Server
 
@@ -40,12 +40,12 @@ yarn run build
 
 ## Built With
 
-* PostgreSQL
-* Apollo Server
-* GraphQL
-* Express
-* Node
-* JavaScript
+- PostgreSQL
+- Apollo Server
+- GraphQL
+- Express
+- Node
+- JavaScript
 
 ## Learning Objective
 
@@ -55,11 +55,12 @@ To apply concepts learned through lecture for the aforementioned technologies to
 
 ![GraphQL Screenshot](https://user-images.githubusercontent.com/36806106/73047079-68bcb400-3e29-11ea-938c-7b9bd4db3244.png "Image")
 
+## Author
+
+- Ringo Wong
+  GitHub: ringo-w
 
 ## Acknowledgements
 
-* **RED Academy** - *initial work*
-* Special thanks to Sid for your patience and guidance
- 
-
-
+- **RED Academy** - _initial work_
+- Special thanks to Sid for your patience and guidance
