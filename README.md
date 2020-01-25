@@ -57,8 +57,8 @@ To apply concepts learned through lecture for the aforementioned technologies to
 
 ## Author
 
-- Ringo Wong
-  GitHub: ringo-w
+- Ringo Wong\
+  [https://github.com/ringo-w](https://github.com/ringo-w)
 
 ## Acknowledgements
 
