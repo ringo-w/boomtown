@@ -2,9 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { MuiThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
-// @TODO: Uncomment each module as needed in your client app
-// import { ApolloProvider } from 'react-apollo'
-// import { BrowserRouter } from 'react-router-dom'
+import { ApolloProvider } from "react-apollo";
+import client from "./apollo";
+import { BrowserRouter as Router } from "react-router-dom";
+import AppRoutes from "./routes";
+
 // -------------------------------
 
 import registerServiceWorker from "./registerServiceWorker";
@@ -51,17 +53,18 @@ import theme from "./theme";
  * user is currently logged in and who that user is.
  */
 
-// @TODO: Remove this import once you have your router working below
-import Home from "./pages/Home";
-// -------------------------------
-
 import "./index.css";
 
 const App = () => {
   return (
     <MuiThemeProvider theme={theme}>
       <CssBaseline />
-      <Home />
+      <ApolloProvider client={client}>
+        {" "}
+        <Router>
+          <AppRoutes />
+        </Router>
+      </ApolloProvider>
     </MuiThemeProvider>
   );
 };
