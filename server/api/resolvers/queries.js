@@ -27,14 +27,14 @@ const queryResolvers = app => ({
   },
   async items(parent, args, { pgResource }, info) {
     try {
-      return pgResource.getItems(args.filter);
+      return await pgResource.getItems(args.filter);
     } catch (e) {
       throw new ApolloError(e);
     }
   },
   async tags(parent, args, { pgResource }, info) {
     try {
-      return pgResource.getTags();
+      return await pgResource.getTags();
     } catch (e) {
       throw new ApolloError(e);
     }
