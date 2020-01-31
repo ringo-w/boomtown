@@ -5,16 +5,24 @@ const styles = theme =>
     root: {
       flexGrow: 1
     },
-    menuButton: theme.spacing(2),
-    title: {
-      flexGrow: 1
-    },
     logo: {
-      height: 46,
+      transform: "scale(1)",
       width: 40
     },
     end: {
       justifyContent: "space-between"
+    },
+    menu: {
+      width: 175
+    },
+    addMargin: {
+      marginRight: 25
+    },
+    addGap: {
+      marginRight: 5
+    },
+    roundBorder: {
+      borderRadius: 50
     }
   });
 

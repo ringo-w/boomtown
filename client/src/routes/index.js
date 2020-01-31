@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import {
-  BrowserRouter as Router,
+  // BrowserRouter as Router,
   Redirect,
   Route,
   Switch
