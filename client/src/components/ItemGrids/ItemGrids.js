@@ -1,20 +1,20 @@
 import React, { Component } from "react";
 import ItemCard from "../ItemCard/ItemCard";
+import Grid from "@material-ui/core/Grid";
 
 class ItemGrids extends Component {
-  //   constructor(props) {
-  //     super(props);
-  //   }
-
   render() {
     let { items } = this.props;
-
     return (
-      <div>
-        {items.map(item => {
-          return <ItemCard item={item} />;
-        })}
-      </div>
+      <Grid item xs={12}>
+        <Grid container justify="center" spacing={3}>
+          {items.map(item => (
+            <Grid key={item.id} item>
+              <ItemCard item={item} />
+            </Grid>
+          ))}
+        </Grid>
+      </Grid>
     );
   }
 }
