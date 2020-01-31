@@ -138,10 +138,10 @@ module.exports = postgres => {
               const tagRelationshipQuery = {
                 text: `INSERT INTO itemtags(tagid, itemid) VALUES 
                 ${tagsQueryString([...tags], itemid, "")}`,
-                value: tags.map(tag => tag.id)
+                values: tags.map(tag => tag.id)
               };
 
-              // await postgres.query(tagRelationshipQuery);
+              await postgres.query(tagRelationshipQuery);
               // Commit the entire transaction!
               client.query("COMMIT", err => {
                 if (err) {
