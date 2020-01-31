@@ -13,11 +13,11 @@ class ItemCard extends Component {
   render() {
     let { item, classes } = this.props;
     return (
-      <Card>
+      <Card className={classes.card}>
         <CardActionArea>
           <CardMedia
             className={classes.media}
-            image="https://via.placeholder.com/150"
+            image="https://media.istockphoto.com/photos/sale-the-word-of-the-letters-hanging-on-the-ropes-picture-id492511462?k=6&m=492511462&s=612x612&w=0&h=nkbbrmikLI-78iJmFhXEFSChXUDgMFDs0NTUXZtZTwU="
             title="Item"
           />
           <CardContent>

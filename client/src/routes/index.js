@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import {
-  // BrowserRouter as Router,
+  BrowserRouter as Router,
   Redirect,
   Route,
   Switch
@@ -9,10 +9,11 @@ import Home from "../pages/Home";
 import Items from "../pages/Items";
 import Profile from "../pages/Profile";
 import Share from "../pages/Share";
+import NavBar from "../components/NavBar";
 
 export default () => (
   <Fragment>
-    {/* @TODO: Add your menu component here */}
+    <NavBar />
     <Switch>
       <Route exact path="/Home" component={Home} />
       <Route exact path="/Items" component={Items} />
