@@ -6,7 +6,7 @@ import { ApolloProvider } from "react-apollo";
 import client from "./apollo";
 import { BrowserRouter as Router } from "react-router-dom";
 import AppRoutes from "./routes";
-
+import ItemPreviewProvider from "./context/ItemPreviewProvider";
 // -------------------------------
 
 import registerServiceWorker from "./registerServiceWorker";
@@ -54,6 +54,7 @@ import theme from "./theme";
  */
 
 import "./index.css";
+// import { ItemPreviewContext } from "./context/ItemPreviewProvider";
 
 const App = () => {
   return (
@@ -61,9 +62,11 @@ const App = () => {
       <CssBaseline />
       <ApolloProvider client={client}>
         {" "}
-        <Router>
-          <AppRoutes />
-        </Router>
+        <ItemPreviewProvider>
+          <Router>
+            <AppRoutes />
+          </Router>
+        </ItemPreviewProvider>
       </ApolloProvider>
     </MuiThemeProvider>
   );

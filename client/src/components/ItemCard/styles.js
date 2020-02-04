@@ -3,11 +3,18 @@ import { createStyles } from "@material-ui/styles";
 const styles = () =>
   createStyles({
     card: {
-      minWidth: 350,
+      minWidth: 380,
       minHeight: 400
     },
     media: {
-      height: 140
+      height: 200
+    },
+    pad: {
+      padding: "20"
+    },
+    tagGrid: {
+      display: "grid",
+      gridTemplateColumns: "1fr 1fr"
     }
   });
 
