@@ -4,7 +4,7 @@ const styles = () =>
   createStyles({
     card: {
       minWidth: 380,
-      minHeight: 400
+      height: 450
     },
     media: {
       height: 200

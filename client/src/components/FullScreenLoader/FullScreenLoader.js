@@ -2,6 +2,7 @@ import React from "react";
 import { withStyles } from "@material-ui/styles";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import styles from "./styles";
+import { Typography } from "@material-ui/core";
 
 function CircularDeterminate(props) {
   const [progress, setProgress] = React.useState(0);
@@ -21,13 +22,20 @@ function CircularDeterminate(props) {
   const { classes } = props;
 
   return (
-    <div className={classes.loader}>
-      <CircularProgress
-        variant="determinate"
-        value={progress}
-        color="secondary"
-        size={100}
-      />
+    <div>
+      <div className={classes.loader}>
+        <CircularProgress
+          variant="indeterminate"
+          value={progress}
+          color="primary"
+          size={50}
+        />
+      </div>
+      <div>
+        <Typography color="primary" className={classes.text}>
+          "For it is in giving that we receive."
+        </Typography>
+      </div>
     </div>
   );
 }

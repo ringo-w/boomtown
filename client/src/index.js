@@ -9,6 +9,7 @@ import AppRoutes from "./routes";
 import ItemPreviewProvider from "./context/ItemPreviewProvider";
 // -------------------------------
 
+import ViewerProvider from "./context/ViewerProvider";
 import registerServiceWorker from "./registerServiceWorker";
 import theme from "./theme";
 
@@ -46,7 +47,6 @@ import theme from "./theme";
 /**
  * @TODO: Wrap your app with the Viewer Context
  *
- * import ViewerProvider from './context/ViewerProvider'
  *
  * Below in your <App />, wrap the <ViewerProvider /> component around
  * the <BrowserRouter /> component so the router is aware of whether a
@@ -62,11 +62,13 @@ const App = () => {
       <CssBaseline />
       <ApolloProvider client={client}>
         {" "}
-        <ItemPreviewProvider>
-          <Router>
-            <AppRoutes />
-          </Router>
-        </ItemPreviewProvider>
+        <ViewerProvider>
+          <ItemPreviewProvider>
+            <Router>
+              <AppRoutes />
+            </Router>
+          </ItemPreviewProvider>
+        </ViewerProvider>
       </ApolloProvider>
     </MuiThemeProvider>
   );

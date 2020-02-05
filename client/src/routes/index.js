@@ -1,26 +1,37 @@
 import React, { Fragment } from "react";
-import {
-  // BrowserRouter as Router,
-  Redirect,
-  Route,
-  Switch
-} from "react-router-dom";
-import Home from "../pages/Home";
+import { Redirect, Route, Switch } from "react-router-dom";
 import Items from "../pages/Items";
+import Home from "../pages/Home";
 import Profile from "../pages/Profile";
 import Share from "../pages/Share";
 import NavBar from "../components/NavBar";
-
+import { ViewerContext } from "../context/ViewerProvider";
+import PrivateRoute from "../components/PrivateRoute";
+import FullScreenLoader from "../components/FullScreenLoader";
 export default () => (
-  <Fragment>
-    <NavBar />
-    <Switch>
-      <Route exact path="/Home" component={Home} />
-      <Route exact path="/Items" component={Items} />
-      <Route exact path="/Profile" component={Profile} />
-      <Route exact path="/Profile/:id" component={Profile} />
-      <Route exact path="/Share" component={Share} />
-      <Redirect from="*" to="/Home" />
-    </Switch>
-  </Fragment>
+  <ViewerContext.Consumer>
+    {({ viewer, loading }) => {
+      if (loading) return <FullScreenLoader />;
+      if (!viewer) {
+        return (
+          <Switch>
+            <Route exact path="/home" name="home" component={Home} />
+            <Redirect from="*" to="/home" />
+          </Switch>
+        );
+      }
+      return (
+        <Fragment>
+          <NavBar location />
+          <Switch>
+            <PrivateRoute exact path="/items" component={Items} />
+            <PrivateRoute exact path="/profile" component={Profile} />
+            <PrivateRoute exact path="/profile/:userid" component={Profile} />
+            <PrivateRoute exact path="/share" component={Share} />
+            <Redirect from="*" to="/profile" />
+          </Switch>
+        </Fragment>
+      );
+    }}
+  </ViewerContext.Consumer>
 );

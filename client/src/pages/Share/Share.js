@@ -7,9 +7,11 @@ import ShareItemFormPreview from "../../components/ShareItemFormPreview";
 const Share = props => {
   const { classes, tags } = props;
   return (
-    <div className={classes.divider}>
-      <ShareItemFormPreview />
-      <ShareItemForm tags={tags} />
+    <div className={classes.root}>
+      <div className={classes.divider}>
+        <ShareItemFormPreview />
+        <ShareItemForm tags={tags} />
+      </div>
     </div>
   );
 };

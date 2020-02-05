@@ -8,6 +8,13 @@ const styles = () =>
       top: "50%",
       left: "50%",
       transform: "translate(-50%, -50%)"
+    },
+    text: {
+      margin: "0",
+      position: "absolute",
+      top: "60%",
+      left: "50%",
+      transform: "translate(-50%, -50%)"
     }
   });
 

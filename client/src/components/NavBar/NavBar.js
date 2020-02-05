@@ -28,7 +28,7 @@ function NavBar(props) {
   return (
     <div
       style={{
-        display: window.location.pathname == "/home" ? "none" : "block"
+        display: window.location.pathname === "/home" ? "none" : "block"
       }}
     >
       <AppBar position="static" className={classes.root}>
@@ -42,7 +42,7 @@ function NavBar(props) {
               className={classes.roundBorder}
               style={{
                 display:
-                  window.location.pathname !== "/share" ? "block" : "none"
+                  window.location.pathname === "/share" ? "none" : "block"
               }}
             >
               <AddCircleIcon className={classes.addGap} />
