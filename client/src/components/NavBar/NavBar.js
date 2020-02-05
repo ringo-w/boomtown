@@ -24,15 +24,27 @@ function NavBar(props) {
     setAnchorEl(null);
   };
   const { classes } = props;
+
   return (
-    <div>
+    <div
+      style={{
+        display: window.location.pathname == "/home" ? "none" : "block"
+      }}
+    >
       <AppBar position="static" className={classes.root}>
         <Toolbar className={classes.end}>
           <IconButton edge="start">
             <img src={logo} alt="boomtown" className={classes.logo} />
           </IconButton>
           <div>
-            <Button color="inherit" className={classes.roundBorder}>
+            <Button
+              color="inherit"
+              className={classes.roundBorder}
+              style={{
+                display:
+                  window.location.pathname !== "/share" ? "block" : "none"
+              }}
+            >
               <AddCircleIcon className={classes.addGap} />
               Share Something
             </Button>
