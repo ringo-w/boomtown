@@ -119,14 +119,8 @@ module.exports = postgres => {
     },
     async saveNewItem({ item, user }) {
       return new Promise((resolve, reject) => {
-        /**
-         * Begin transaction by opening a long-lived connection
-         * to a client from the client pool.
-         * - Read about transactions here: https://node-postgres.com/features/transactions
-         */
         postgres.connect((err, client, done) => {
           try {
-            // Begin postgres transaction
             client.query("BEGIN", async err => {
               const { title, description, tags } = item;
               const newItemQuery = {
@@ -142,25 +136,20 @@ module.exports = postgres => {
               };
 
               await postgres.query(tagRelationshipQuery);
-              // Commit the entire transaction!
               client.query("COMMIT", err => {
                 if (err) {
                   throw err;
                 }
-                // release the client back to the pool
                 done();
-                // Uncomment this resolve statement when you're ready!
                 resolve(insertNewItem.rows[0]);
-                // -------------------------------
               });
             });
           } catch (e) {
-            // Something went wrong
             client.query("ROLLBACK", err => {
               if (err) {
                 throw err;
               }
-              // release the client back to the pool
+
               done();
             });
             switch (true) {

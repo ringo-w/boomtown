@@ -23,7 +23,6 @@ module.exports = ({ app, pgResource }) => {
       // let user = null
       // -------------------------------
       try {
-        // TODO:
         return {
           req,
           pgResource
@@ -39,8 +38,6 @@ module.exports = ({ app, pgResource }) => {
 
   apolloServer.applyMiddleware({
     app,
-    // @TODO: Add the CORS_CONFIG from your application configuration
     cors: app.get("CORS_CONFIG")
-    // -------------------------------
   });
 };
