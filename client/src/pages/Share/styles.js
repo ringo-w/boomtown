@@ -3,7 +3,7 @@ import { createStyles } from "@material-ui/styles";
 const styles = theme =>
   createStyles({
     root: {
-      backgroundColor: "#21212"
+      backgroundColor: "#212121"
     },
     divider: {
       display: "flex",

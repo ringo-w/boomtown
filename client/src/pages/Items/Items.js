@@ -8,7 +8,6 @@ const Items = ({ items }) => {
   return (
     <div>
       <ItemsGrids items={items} />
-      This is the items page located at <code>/items</code>.
     </div>
   );
 };
