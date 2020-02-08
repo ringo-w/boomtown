@@ -19,10 +19,14 @@ const styles = () =>
       marginRight: 25
     },
     addGap: {
-      marginRight: 5
+      justifyContent: "space-between"
     },
     roundBorder: {
       borderRadius: 50
+    },
+    sideBySide: {
+      display: "grid",
+      gridTemplateColumns: "1fr 1fr"
     }
   });
 

@@ -1,13 +1,12 @@
-import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
-import styles from './styles';
+import React from "react";
+import { withStyles } from "@material-ui/core/styles";
+import styles from "./styles";
+import ProfileCard from "../../components/ProfileCard";
 
-const Profile = ({ classes }) => {
+const Profile = ({ profile, viewer }) => {
   return (
     <div>
-      <p>
-        This is the profile page located at <code>/profile/:userId</code>.
-      </p>
+      <ProfileCard profile={profile} viewer={viewer} />
     </div>
   );
 };

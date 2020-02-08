@@ -1,9 +1,10 @@
-/* body,
-html {
-} */
-
 #root {
   background: #212121;
+  height: 100%;
+}
+#body {
+  background: #212121;
+  height: 100vh;
 }
 
 a {

@@ -3,7 +3,7 @@ import { createStyles } from "@material-ui/styles";
 const styles = () =>
   createStyles({
     card: {
-      minWidth: 380,
+      width: 350,
       height: 450
     },
     media: {
@@ -15,6 +15,17 @@ const styles = () =>
     tagGrid: {
       display: "grid",
       gridTemplateColumns: "1fr 1fr"
+    },
+    spaced: {
+      display: "flex"
+    },
+    flex: {
+      display: "flex",
+      flexDirection: "column",
+      paddingLeft: 10
+    },
+    link: {
+      color: "black"
     }
   });
 

@@ -68,7 +68,7 @@ class ShareItemForm extends Component {
                           }
                         });
                       } catch (err) {
-                        throw new Error();
+                        throw new Error(err);
                       }
                     }}
                     render={({
@@ -203,6 +203,7 @@ class ShareItemForm extends Component {
                           className={classes.shareButton}
                           type="submit"
                           disabled={pristine || submitting || invalid}
+                          href="/profile"
                         >
                           Share
                         </Button>

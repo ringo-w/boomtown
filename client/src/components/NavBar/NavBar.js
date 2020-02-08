@@ -12,6 +12,10 @@ import AddCircleIcon from "@material-ui/icons/AddCircle";
 import logo from "../../images/boomtown.svg";
 import FingerprintIcon from "@material-ui/icons/Fingerprint";
 import PowerSettingsNewIcon from "@material-ui/icons/PowerSettingsNew";
+import Link from "@material-ui/core/Link";
+import { Mutation } from "react-apollo";
+import { LOGOUT_MUTATION, VIEWER_QUERY } from "../../apollo/queries";
+import { withRouter } from "react-router";
 
 function NavBar(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -26,61 +30,74 @@ function NavBar(props) {
   const { classes } = props;
 
   return (
-    <div
-      style={{
-        display: window.location.pathname === "/home" ? "none" : "block"
-      }}
-    >
-      <AppBar position="static" className={classes.root}>
-        <Toolbar className={classes.end}>
-          <IconButton edge="start">
-            <img src={logo} alt="boomtown" className={classes.logo} />
-          </IconButton>
-          <div>
-            <Button
-              color="inherit"
-              className={classes.roundBorder}
-              style={{
-                display:
-                  window.location.pathname === "/share" ? "none" : "block"
-              }}
-            >
-              <AddCircleIcon className={classes.addGap} />
-              Share Something
-            </Button>
-            <IconButton
-              aria-label="display more actions"
-              edge="end"
-              color="inherit"
-              aria-controls="simple-menu"
-              aria-haspopup="true"
-              onClick={handleClick}
-            >
-              <MoreIcon />
-            </IconButton>
-            <div>
-              <Menu
-                id="simple-menu"
-                anchorEl={anchorEl}
-                keepMounted
-                open={Boolean(anchorEl)}
-                onClose={handleClose}
-              >
-                <MenuItem onClick={handleClose} className={classes.menu}>
-                  <FingerprintIcon className={classes.addMargin} />
-                  Profile
-                </MenuItem>
-                <MenuItem onClick={handleClose} className={classes.menu}>
-                  <PowerSettingsNewIcon className={classes.addMargin} />
-                  Sign Out
-                </MenuItem>
-              </Menu>
-            </div>
-          </div>
-        </Toolbar>
-      </AppBar>
+    <div>
+      <Mutation
+        mutation={LOGOUT_MUTATION}
+        refetchQueries={[{ query: VIEWER_QUERY }]}
+      >
+        {logout => (
+          <AppBar position="static" className={classes.root}>
+            <Toolbar className={classes.end}>
+              <IconButton edge="start" href="/items">
+                <img src={logo} alt="boomtown" className={classes.logo} />
+              </IconButton>
+              <div className={classes.sideBySide}>
+                <Button
+                  color="inherit"
+                  className={classes.roundBorder}
+                  style={{
+                    display:
+                      props.location.pathname === "/share" ? "none" : "block"
+                  }}
+                  href="/share"
+                >
+                  <AddCircleIcon className={classes.addGap} />
+                  <span>Share Something</span>
+                </Button>
+                <IconButton
+                  aria-label="display more actions"
+                  edge="end"
+                  color="inherit"
+                  aria-controls="simple-menu"
+                  aria-haspopup="true"
+                  onClick={handleClick}
+                >
+                  <MoreIcon />
+                </IconButton>
+                <div>
+                  <Menu
+                    id="simple-menu"
+                    anchorEl={anchorEl}
+                    keepMounted
+                    open={Boolean(anchorEl)}
+                    onClose={handleClose}
+                    className={classes.roundBorder}
+                  >
+                    <Link href="/profile" color="secondary" underline="none">
+                      <MenuItem onClick={handleClose} className={classes.menu}>
+                        <FingerprintIcon className={classes.addMargin} />
+                        Profile
+                      </MenuItem>
+                    </Link>
+                    <MenuItem
+                      onClick={() => {
+                        handleClose();
+                        logout();
+                      }}
+                      className={classes.menu}
+                    >
+                      <PowerSettingsNewIcon className={classes.addMargin} />
+                      Sign Out
+                    </MenuItem>
+                  </Menu>
+                </div>
+              </div>
+            </Toolbar>
+          </AppBar>
+        )}
+      </Mutation>
     </div>
   );
 }
 
-export default withStyles(styles)(NavBar);
+export default withRouter(withStyles(styles)(NavBar));

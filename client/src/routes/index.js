@@ -8,6 +8,7 @@ import NavBar from "../components/NavBar";
 import { ViewerContext } from "../context/ViewerProvider";
 import PrivateRoute from "../components/PrivateRoute";
 import FullScreenLoader from "../components/FullScreenLoader";
+
 export default () => (
   <ViewerContext.Consumer>
     {({ viewer, loading }) => {
@@ -22,13 +23,13 @@ export default () => (
       }
       return (
         <Fragment>
-          <NavBar location />
+          <NavBar />
           <Switch>
             <PrivateRoute exact path="/items" component={Items} />
             <PrivateRoute exact path="/profile" component={Profile} />
             <PrivateRoute exact path="/profile/:userid" component={Profile} />
             <PrivateRoute exact path="/share" component={Share} />
-            <Redirect from="*" to="/profile" />
+            <Redirect from="*" to="/items" />
           </Switch>
         </Fragment>
       );

@@ -4,10 +4,11 @@ export const ItemPreviewContext = React.createContext();
 
 const initialState = {
   imageurl: "http://via.placeholder.com/350x250?text=Please select an image",
-  itemOwner: {},
+  itemowner: {},
+  email: "dummyemail@gmail.com",
   created: new Date(),
-  title: "Dummy Title",
-  description: "Dummy description",
+  title: "Name your item",
+  description: "Describe your item",
   tags: []
 };
 
