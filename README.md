@@ -1,5 +1,9 @@
 # Boomtown
 
+## GraphQL Screenshot
+
+![GraphQL Screenshot](https://user-images.githubusercontent.com/36806106/73047079-68bcb400-3e29-11ea-938c-7b9bd4db3244.png "Image")
+
 ## Server
 
 Commands must be run from the `server` directory:
@@ -49,16 +53,12 @@ yarn run build
 
 ## Learning Objective
 
-To apply concepts learned through lecture for the aforementioned technologies to create a backend application.
-
-## GraphQL Screenshot
-
-![GraphQL Screenshot](https://user-images.githubusercontent.com/36806106/73047079-68bcb400-3e29-11ea-938c-7b9bd4db3244.png "Image")
+Boomtown was created and designed as a platform to create a share space for users to list items they would like to share so that others can borrow them. This project allows for practical application to concepts learned through lecture for the aforementioned technologies to create a full-stack standalone project.
 
 ## Author
 
 - Ringo Wong\
-  [https://github.com/ringo-w](https://github.com/ringo-w)
+  [https://www.linkedin.com/ringo-wong](https://www.linkedin.com/in/ringo-wong-9b4686173/)
 
 ## Acknowledgements
 

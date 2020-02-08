@@ -13,6 +13,7 @@ import DriveEtaIcon from "@material-ui/icons/DriveEta";
 import { ItemPreviewContext } from "../../context/ItemPreviewProvider";
 import { Mutation } from "react-apollo";
 import { ADD_ITEM_MUTATION } from "../../apollo/queries";
+import Link from "@material-ui/core/Link";
 
 class ShareItemForm extends Component {
   validate = values => {
@@ -199,11 +200,12 @@ class ShareItemForm extends Component {
                             <DriveEtaIcon />
                           </label>
                         </div>
+
                         <Button
                           className={classes.shareButton}
                           type="submit"
                           disabled={pristine || submitting || invalid}
-                          href="/profile"
+                          // href="/profile"
                         >
                           Share
                         </Button>

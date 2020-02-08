@@ -10,7 +10,7 @@ import Typography from "@material-ui/core/Typography";
 import styles from "./styles";
 import { withStyles } from "@material-ui/styles";
 import moment from "moment";
-import { Link } from "react-router-dom";
+import Link from "@material-ui/core/Link";
 
 class ItemCard extends Component {
   render() {

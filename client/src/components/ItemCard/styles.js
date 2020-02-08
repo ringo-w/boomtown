@@ -26,6 +26,9 @@ const styles = () =>
     },
     link: {
       color: "black"
+    },
+    gravatar: {
+      borderRadius: "50%"
     }
   });
 
