@@ -10,19 +10,25 @@ class ProfileCard extends Component {
     const { profile, viewer, classes } = this.props;
     return (
       <div>
-        <Card>
-          <CardContent>
+        <Card className={classes.card}>
+          <CardContent className={classes.alignContent}>
             <Gravatar email={profile.email} className={classes.gravatar} />
-            <Typography>{profile.fullname}</Typography>
-            <span>{profile.items.length} Items Shared</span>
-            <span>{profile.borrowed.length} Items Borrowed</span>
+            <Typography>
+              <h2>{profile.fullname}</h2>
+            </Typography>
+            <Typography className={classes.details}>
+              {profile.items.length} Items Shared
+            </Typography>
+            <Typography>{profile.borrowed.length} Items Borrowed</Typography>
             <Typography>
               {profile.bio === null ? "No bio provided." : profile.bio}
             </Typography>
           </CardContent>
         </Card>
 
-        <Typography color="primary">Shared Items</Typography>
+        <Typography color="primary" className={classes.marginTop}>
+          <h1>Shared Items</h1>
+        </Typography>
 
         <Grid item xs="auto">
           <Grid container justify="center" spacing={3}>
