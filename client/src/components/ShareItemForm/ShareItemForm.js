@@ -13,7 +13,7 @@ import DriveEtaIcon from "@material-ui/icons/DriveEta";
 import { ItemPreviewContext } from "../../context/ItemPreviewProvider";
 import { Mutation } from "react-apollo";
 import { ADD_ITEM_MUTATION } from "../../apollo/queries";
-import Link from "@material-ui/core/Link";
+import { withRouter } from "react-router";
 
 class ShareItemForm extends Component {
   validate = values => {
@@ -47,7 +47,7 @@ class ShareItemForm extends Component {
     });
   };
   render() {
-    const { classes, tags } = this.props;
+    const { classes, tags, history } = this.props;
     return (
       <ItemPreviewContext.Consumer>
         {({ updatePreview, resetPreview }) => (
@@ -68,6 +68,7 @@ class ShareItemForm extends Component {
                             }
                           }
                         });
+                        history.push("/profile");
                       } catch (err) {
                         throw new Error(err);
                       }
@@ -222,4 +223,4 @@ class ShareItemForm extends Component {
   }
 }
 
-export default withStyles(styles)(ShareItemForm);
+export default withRouter(withStyles(styles)(ShareItemForm));
