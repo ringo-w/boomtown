@@ -35,6 +35,7 @@ class ItemCard extends Component {
                       (item && item.itemowner && item.itemowner.email) ||
                       item.email
                     }
+                    className={classes.gravatar}
                   />
                 </Typography>
                 <Typography className={classes.flex}>

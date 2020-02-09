@@ -21,18 +21,19 @@ class ProfileCard extends Component {
             </Typography>
           </CardContent>
         </Card>
-        <Card>
-          <Typography>Shared Items</Typography>
-        </Card>
-        <Grid container spacing={3}>
-          {profile.items.map(item => {
-            return (
-              <Grid key={item.id} xs={12}>
-                <ItemCard profile={profile} viewer={viewer} item={item} />
+
+        <Typography color="primary">Shared Items</Typography>
+
+        <Grid item xs="auto">
+          <Grid container justify="center" spacing={3}>
+            {profile.items.map(item => (
+              <Grid key={item.id} item>
+                <ItemCard item={item} />
               </Grid>
-            );
-          })}
+            ))}
+          </Grid>
         </Grid>
+
         <Typography>
           {profile.borrowed.id}
           Borrowed Items
