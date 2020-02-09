@@ -6,27 +6,30 @@ const styles = () =>
       flexGrow: 1
     },
     logo: {
-      transform: "scale(1)",
-      width: 40
+      width: 30
     },
-    end: {
+    addSpace: {
+      display: "flex",
       justifyContent: "space-between"
     },
+    circle: {
+      position: "relative",
+      top: 8,
+      right: 5,
+      transform: "scale(0.85)"
+    },
     menu: {
-      width: 175
+      width: 170
     },
     addMargin: {
       marginRight: 25
     },
-    addGap: {
-      justifyContent: "space-between"
-    },
     roundBorder: {
       borderRadius: 50
-    },
-    sideBySide: {
-      display: "grid",
-      gridTemplateColumns: "1fr 1fr"
+      // },
+      // sideBySide: {
+      //   display: "grid",
+      //   gridTemplateColumns: "1fr 1fr"
     }
   });
 

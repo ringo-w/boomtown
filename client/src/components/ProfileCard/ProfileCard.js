@@ -7,12 +7,12 @@ import { Card, CardContent, Typography, Grid } from "@material-ui/core";
 
 class ProfileCard extends Component {
   render() {
-    const { profile, viewer } = this.props;
+    const { profile, viewer, classes } = this.props;
     return (
       <div>
         <Card>
           <CardContent>
-            <Gravatar email={profile.email} />
+            <Gravatar email={profile.email} className={classes.gravatar} />
             <Typography>{profile.fullname}</Typography>
             <span>{profile.items.length} Items Shared</span>
             <span>{profile.borrowed.length} Items Borrowed</span>

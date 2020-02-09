@@ -10,7 +10,7 @@ import Typography from "@material-ui/core/Typography";
 import styles from "./styles";
 import { withStyles } from "@material-ui/styles";
 import moment from "moment";
-import Link from "@material-ui/core/Link";
+import { Link } from "react-router-dom";
 
 class ItemCard extends Component {
   render() {
@@ -18,10 +18,7 @@ class ItemCard extends Component {
     return (
       <Card className={classes.card}>
         <CardActionArea>
-          <Link
-            to={`/profile/` + (item && item.itemowner.id)}
-            className={classes.link}
-          >
+          <Link to={`/profile/${item.itemowner.id}`} className={classes.link}>
             <CardMedia
               className={classes.media}
               image="https://picsum.photos/350/400"

@@ -16,6 +16,7 @@ import Link from "@material-ui/core/Link";
 import { Mutation } from "react-apollo";
 import { LOGOUT_MUTATION, VIEWER_QUERY } from "../../apollo/queries";
 import { withRouter } from "react-router";
+import { Typography } from "@material-ui/core";
 
 function NavBar(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -37,22 +38,25 @@ function NavBar(props) {
       >
         {logout => (
           <AppBar position="static" className={classes.root}>
-            <Toolbar className={classes.end}>
+            <Toolbar className={classes.addSpace}>
               <IconButton edge="start" href="/items">
                 <img src={logo} alt="boomtown" className={classes.logo} />
               </IconButton>
-              <div className={classes.sideBySide}>
+              <div className={classes.addSpace}>
                 <Button
                   color="inherit"
                   className={classes.roundBorder}
+                  variant="text"
                   style={{
                     display:
                       props.location.pathname === "/share" ? "none" : "block"
                   }}
                   href="/share"
                 >
-                  <AddCircleIcon className={classes.addGap} />
-                  <span>Share Something</span>
+                  <AddCircleIcon className={classes.circle} />
+                  {/* <Typography className={classes.text}> */}
+                  Share Something
+                  {/* </Typography> */}
                 </Button>
                 <IconButton
                   aria-label="display more actions"
