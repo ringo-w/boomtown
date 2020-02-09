@@ -2,8 +2,10 @@ import { createStyles } from "@material-ui/styles";
 
 const styles = () =>
   createStyles({
-    root: {
-      flexGrow: 1
+    nav: {
+      position: "fixed",
+      top: 0,
+      width: "100%"
     },
     logo: {
       width: 30
