@@ -2,8 +2,8 @@ import { createStyles } from "@material-ui/styles";
 
 const styles = () =>
   createStyles({
-    root: {
-      flexGrow: 1
+    pad: {
+      padding: "120px 10px 10px 10px"
     }
   });
 

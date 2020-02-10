@@ -9,10 +9,9 @@ const styles = () =>
       borderRadius: "50%"
     },
     card: {
-      marginTop: "2rem",
       display: "flex",
       borderRadius: 10,
-      width: "90vw",
+      width: "88.5vw",
       margin: "auto"
     },
     marginTop: {
@@ -28,7 +27,8 @@ const styles = () =>
       display: "flex",
       alignItems: "center",
       marginBottom: "1rem"
-    }
+    },
+    pad: { padding: "120px 10px 10px 10px" }
   });
 
 export default styles;

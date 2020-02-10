@@ -10,7 +10,7 @@ class ProfileCard extends Component {
   render() {
     const { profile, viewer, classes } = this.props;
     return (
-      <div>
+      <div className={classes.pad}>
         <Card className={classes.card}>
           <CardContent className={classes.alignContent}>
             <Gravatar email={profile.email} className={classes.gravatar} />

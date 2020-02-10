@@ -7,9 +7,9 @@ import PropTypes from "prop-types";
 
 class ItemGrids extends Component {
   render() {
-    let { items } = this.props;
+    let { items, classes } = this.props;
     return (
-      <Grid item xs="auto">
+      <Grid item xs="auto" className={classes.pad}>
         <Grid container justify="center" spacing={3}>
           {items.map(item => (
             <Grid key={item.id} item>
@@ -23,6 +23,7 @@ class ItemGrids extends Component {
 }
 
 ItemGrids.propTypes = {
-  items: PropTypes.array.isRequired
+  items: PropTypes.array.isRequired,
+  classes: PropTypes.object.isRequired
 };
 export default withStyles(styles)(ItemGrids);

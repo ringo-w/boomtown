@@ -37,7 +37,7 @@ function NavBar(props) {
         refetchQueries={[{ query: VIEWER_QUERY }]}
       >
         {logout => (
-          <AppBar position="sticky" className={classes.nav}>
+          <AppBar className={classes.nav}>
             <Toolbar className={classes.addSpace}>
               <IconButton edge="start" href="/items">
                 <img src={logo} alt="boomtown" className={classes.logo} />

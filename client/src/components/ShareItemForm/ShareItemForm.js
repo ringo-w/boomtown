@@ -3,20 +3,19 @@ import { Form, Field, FormSpy } from "react-final-form";
 import { FormLabel, TextField, Typography, Button } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import styles from "./styles";
-import HomeIcon from "@material-ui/icons/Home";
-import BuildIcon from "@material-ui/icons/Build";
+import HomeOutlinedIcon from "@material-ui/icons/HomeOutlined";
+import BuildOutlinedIcon from "@material-ui/icons/BuildOutlined";
 import DevicesIcon from "@material-ui/icons/Devices";
-import MusicNoteIcon from "@material-ui/icons/MusicNote";
-import BookIcon from "@material-ui/icons/Book";
+import MusicNoteOutlinedIcon from "@material-ui/icons/MusicNoteOutlined";
+import BookOutlinedIcon from "@material-ui/icons/BookOutlined";
 import SportsIcon from "@material-ui/icons/Sports";
-import DriveEtaIcon from "@material-ui/icons/DriveEta";
+import EmojiEmotionsOutlinedIcon from "@material-ui/icons/EmojiEmotionsOutlined";
 import { ItemPreviewContext } from "../../context/ItemPreviewProvider";
 import { Mutation } from "react-apollo";
 import { ADD_ITEM_MUTATION } from "../../apollo/queries";
 import { withRouter } from "react-router";
 import validate from "./helpers/validation";
 import PropTypes from "prop-types";
-import ShareItemPreview from "../ShareItemFormPreview/ShareItemFormPreview";
 
 class ShareItemForm extends Component {
   validate = values => {
@@ -101,7 +100,7 @@ class ShareItemForm extends Component {
                                 <TextField
                                   className={classes.textField}
                                   id="standard-textarea"
-                                  label="Name your item"
+                                  placeholder="Name your item"
                                   margin="normal"
                                   {...input}
                                 />
@@ -122,7 +121,8 @@ class ShareItemForm extends Component {
                                   id="filled-description"
                                   placeholder="Describe your item"
                                   multiline
-                                  rows="4"
+                                  rows="2"
+                                  margin="normal"
                                   {...input}
                                 />
                                 {meta.touched && meta.invalid && (
@@ -132,88 +132,90 @@ class ShareItemForm extends Component {
                             );
                           }}
                         />
-                        <FormLabel component="legend">Add some tags</FormLabel>
-                        <div className={classes.addGrid}>
-                          <label>
-                            <Field
-                              name="tags"
-                              component="input"
-                              type="checkbox"
-                              value="Household Items"
-                            />
-                            Household Items
-                            <HomeIcon />
-                          </label>
-                          <label>
-                            <Field
-                              name="tags"
-                              component="input"
-                              type="checkbox"
-                              value="Tools"
-                            />
-                            Tools
-                            <BuildIcon />
-                          </label>
-                          <label>
-                            <Field
-                              name="tags"
-                              component="input"
-                              type="checkbox"
-                              value="Electronics"
-                            />
-                            Electronics
-                            <DevicesIcon />
-                          </label>
-                          <label>
-                            <Field
-                              name="tags"
-                              component="input"
-                              type="checkbox"
-                              value="Physical Media"
-                            />
-                            Physical Media
-                            <BookIcon />
-                          </label>
-                          <label>
-                            <Field
-                              name="tags"
-                              component="input"
-                              type="checkbox"
-                              value="Sporting Goods"
-                            />
-                            Sporting Goods
-                            <SportsIcon />
-                          </label>
-                          <label>
-                            <Field
-                              name="tags"
-                              component="input"
-                              type="checkbox"
-                              value="Musical Instruments"
-                            />
-                            Musical Instruments
-                            <MusicNoteIcon />
-                          </label>
-                          <label>
-                            <Field
-                              name="tags"
-                              component="input"
-                              type="checkbox"
-                              value="Recreation Equipment"
-                            />
-                            Recreation Equipment
-                            <DriveEtaIcon />
-                          </label>
-                        </div>
+                        <div className={classes.tagContainer}>
+                          <FormLabel component="legend">Add tags</FormLabel>
+                          <div className={classes.addGrid}>
+                            <label>
+                              <Field
+                                name="tags"
+                                component="input"
+                                type="checkbox"
+                                value="Household Items"
+                              />
+                              <span>Household Items &nbsp;</span>
+                              <HomeOutlinedIcon />
+                            </label>
+                            <label>
+                              <Field
+                                name="tags"
+                                component="input"
+                                type="checkbox"
+                                value="Tools"
+                              />
+                              <span>Tools &nbsp;</span>
+                              <BuildOutlinedIcon />
+                            </label>
+                            <label>
+                              <Field
+                                name="tags"
+                                component="input"
+                                type="checkbox"
+                                value="Electronics"
+                              />
+                              <span>Electronics &nbsp;</span>
+                              <DevicesIcon />
+                            </label>
+                            <label>
+                              <Field
+                                name="tags"
+                                component="input"
+                                type="checkbox"
+                                value="Physical Media"
+                              />
+                              <span>Physical Media &nbsp;</span>
+                              <BookOutlinedIcon />
+                            </label>
+                            <label>
+                              <Field
+                                name="tags"
+                                component="input"
+                                type="checkbox"
+                                value="Sporting Goods"
+                              />
+                              <span>Sporting Goods &nbsp;</span>
+                              <SportsIcon />
+                            </label>
+                            <label>
+                              <Field
+                                name="tags"
+                                component="input"
+                                type="checkbox"
+                                value="Musical Instruments"
+                              />
+                              <span>Musical Instruments &nbsp; &nbsp;</span>
+                              <MusicNoteOutlinedIcon />
+                            </label>
+                            <label>
+                              <Field
+                                name="tags"
+                                component="input"
+                                type="checkbox"
+                                value="Recreation Equipment"
+                              />
+                              <span>Recreation Equipment &nbsp;</span>
+                              <EmojiEmotionsOutlinedIcon />
+                            </label>
+                          </div>
 
-                        <Button
-                          className={classes.shareButton}
-                          type="submit"
-                          disabled={pristine || submitting || invalid}
-                          // href="/profile"
-                        >
-                          Share
-                        </Button>
+                          <Button
+                            className={classes.shareButton}
+                            type="submit"
+                            disabled={pristine || submitting || invalid}
+                            // href="/profile"
+                          >
+                            Share
+                          </Button>
+                        </div>
                       </form>
                     )}
                   />

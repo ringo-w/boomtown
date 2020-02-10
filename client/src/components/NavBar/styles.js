@@ -3,11 +3,9 @@ import { createStyles } from "@material-ui/styles";
 const styles = () =>
   createStyles({
     nav: {
-      position: "sticky"
-      // position: "fixed",
-      // top: 0,
-      // width: "100%",
-      // marginBottom: "20px"
+      position: "fixed",
+      top: 0,
+      width: "100%"
     },
     logo: {
       width: 30

@@ -5,11 +5,7 @@ const styles = theme => ({
     lineHeight: 2
   },
   textField: {
-    marginTop: "1.5rem",
     width: "100%"
-  },
-  dense: {
-    marginTop: 19
   },
   header: {
     fontSize: "2.8rem",
@@ -19,8 +15,7 @@ const styles = theme => ({
   headerTwo: {
     fontSize: "2.8rem",
     fontWeight: 700,
-    lineHeight: "1",
-    marginBottom: "2rem"
+    lineHeight: "1"
   },
   imageButton: {
     background: theme.palette.primary.main,
@@ -36,11 +31,15 @@ const styles = theme => ({
     flexFlow: "rowWrap"
   },
   addWidth: {
-    width: "425px"
+    width: "425px",
+    padding: "120px 10px 10px 10px"
   },
   addGrid: {
     display: "grid",
     gridTemplateColumns: "1fr 1fr"
+  },
+  tagContainer: {
+    paddingTop: "25px"
   }
 });
 
