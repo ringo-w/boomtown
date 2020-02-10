@@ -5,7 +5,7 @@ import styles from "./styles";
 import { Typography } from "@material-ui/core";
 import PropTypes from "prop-types";
 
-function CircularDeterminate(props) {
+function FullScreenLoader(props) {
   const [progress, setProgress] = React.useState(0);
 
   React.useEffect(() => {
@@ -41,8 +41,8 @@ function CircularDeterminate(props) {
   );
 }
 
-CircularDeterminate.propTypes = {
+FullScreenLoader.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(CircularDeterminate);
+export default withStyles(styles)(FullScreenLoader);
