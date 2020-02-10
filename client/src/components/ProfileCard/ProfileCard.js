@@ -12,26 +12,29 @@ class ProfileCard extends Component {
     return (
       <div className={classes.pad}>
         <Card className={classes.card}>
-          <CardContent className={classes.alignContent}>
-            <Gravatar email={profile.email} className={classes.gravatar} />
-            <Typography>
-              <h2>{profile.fullname}</h2>
-            </Typography>
-            <Typography className={classes.details}>
-              {profile.items.length} Items Shared
-            </Typography>
-            <Typography>{profile.borrowed.length} Items Borrowed</Typography>
-            <Typography>
-              {profile.bio === null ? "No bio provided." : profile.bio}
+          <CardContent>
+            <div className={classes.username}>
+              <Gravatar email={profile.email} className={classes.gravatar} />
+              <Typography variant="h4">{profile.fullname}</Typography>
+            </div>
+            <div>
+              <Typography variant="h6">
+                <span className={classes.bold}>{profile.items.length}</span>{" "}
+                Items shared,{" "}
+                <span className={classes.bold}>{profile.borrowed.length}</span>{" "}
+                Items borrowed
+              </Typography>
+            </div>
+            <Typography variant="h12">
+              {profile.bio === null ? '"No bio provided."' : profile.bio}
             </Typography>
           </CardContent>
         </Card>
 
-        <Typography color="primary" className={classes.marginTop}>
-          <h1>Shared Items</h1>
-        </Typography>
-
         <Grid item xs="auto">
+          <Typography color="primary" variant="h4" className={classes.title}>
+            Shared Items
+          </Typography>
           <Grid container justify="center" spacing={3}>
             {profile.items.map(item => (
               <Grid key={item.id} item>

@@ -1,4 +1,5 @@
 import { createStyles } from "@material-ui/styles";
+import { FormHelperText, responsiveFontSizes } from "@material-ui/core";
 
 const styles = () =>
   createStyles({
@@ -10,25 +11,27 @@ const styles = () =>
     },
     card: {
       display: "flex",
-      borderRadius: 10,
+      borderRadius: 5,
       width: "88.5vw",
-      margin: "auto"
+      margin: "auto",
+      paddingLeft: "20px",
+      alignItems: "flex-start",
+      flexDirection: "column",
+      justifyContent: "space-evenly",
+      minHeight: 225
     },
-    marginTop: {
-      position: "relative",
-      marginTop: "20"
+    title: {
+      paddingTop: "40px",
+      paddingLeft: "60px",
+      paddingBottom: "5px"
     },
-    alignContent: {
-      display: "flex",
-      justifyContent: "flex-start",
-      alignItems: "center"
-    },
-    details: {
+    username: {
       display: "flex",
       alignItems: "center",
-      marginBottom: "1rem"
+      paddingBottom: "10px"
     },
-    pad: { padding: "120px 10px 10px 10px" }
+    pad: { padding: "120px 10px 10px 10px" },
+    bold: { fontWeight: 900 }
   });
 
 export default styles;
