@@ -26,7 +26,7 @@ class ItemCard extends Component {
               title="Item"
             />
             <CardContent>
-              <div className={classes.spaced}>
+              <div className={classes.userInfo}>
                 <Typography>
                   <Gravatar
                     email={

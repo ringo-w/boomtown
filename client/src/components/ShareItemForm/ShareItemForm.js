@@ -18,17 +18,17 @@ import validate from "./helpers/validation";
 import PropTypes from "prop-types";
 
 class ShareItemForm extends Component {
-  validate = values => {
-    const error = {};
+  // validate = values => {
+  //   const error = {};
 
-    if (!values.name) {
-      error.name = "Required";
-    }
-    if (!values.description) {
-      error.description = "Required";
-    }
-    return error;
-  };
+  //   if (!values.name) {
+  //     error.name = "Required";
+  //   }
+  //   if (!values.description) {
+  //     error.description = "Required";
+  //   }
+  //   return error;
+  // };
 
   applyTags = (tags, allTags) => {
     return tags.map(tag => {
@@ -48,6 +48,7 @@ class ShareItemForm extends Component {
       tags: this.applyTags(values.tags || [], allTags)
     });
   };
+
   render() {
     const { classes, tags, history } = this.props;
     return (

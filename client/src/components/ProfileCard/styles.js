@@ -1,5 +1,4 @@
 import { createStyles } from "@material-ui/styles";
-import { FormHelperText, responsiveFontSizes } from "@material-ui/core";
 
 const styles = () =>
   createStyles({

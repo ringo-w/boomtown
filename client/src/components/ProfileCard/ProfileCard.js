@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
 
 class ProfileCard extends Component {
   render() {
-    const { profile, viewer, classes } = this.props;
+    const { profile, classes } = this.props;
     return (
       <div className={classes.pad}>
         <Card className={classes.card}>
@@ -50,7 +50,6 @@ class ProfileCard extends Component {
 
 ProfileCard.propTypes = {
   classes: PropTypes.object.isRequired,
-  viewer: PropTypes.object.isRequired,
   profile: PropTypes.object.isRequired
 };
 export default withStyles(styles)(ProfileCard);

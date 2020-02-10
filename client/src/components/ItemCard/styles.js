@@ -16,8 +16,9 @@ const styles = () =>
       display: "grid",
       gridTemplateColumns: "1fr 1fr"
     },
-    spaced: {
-      display: "flex"
+    userInfo: {
+      display: "flex",
+      paddingBottom: "15px"
     },
     flex: {
       display: "flex",
