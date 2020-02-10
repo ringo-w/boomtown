@@ -1,11 +1,7 @@
 import React from "react";
-import Button from "@material-ui/core/Button";
-import Menu from "@material-ui/core/Menu";
-import MenuItem from "@material-ui/core/MenuItem";
-import { withStyles } from "@material-ui/styles";
-import AppBar from "@material-ui/core/AppBar";
+import { Button, Menu, MenuItem, AppBar, IconButton } from "@material-ui/core";
 import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
+import { withStyles } from "@material-ui/styles";
 import styles from "./styles";
 import MoreIcon from "@material-ui/icons/MoreVert";
 import AddCircleIcon from "@material-ui/icons/AddCircle";

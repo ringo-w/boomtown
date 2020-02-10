@@ -18,18 +18,6 @@ import validate from "./helpers/validation";
 import PropTypes from "prop-types";
 
 class ShareItemForm extends Component {
-  // validate = values => {
-  //   const error = {};
-
-  //   if (!values.name) {
-  //     error.name = "Required";
-  //   }
-  //   if (!values.description) {
-  //     error.description = "Required";
-  //   }
-  //   return error;
-  // };
-
   applyTags = (tags, allTags) => {
     return tags.map(tag => {
       const updatedTag = { title: tag };
