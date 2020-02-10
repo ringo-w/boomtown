@@ -25,7 +25,7 @@ class ProfileCard extends Component {
                 Items borrowed
               </Typography>
             </div>
-            <Typography variant="h12">
+            <Typography variant="caption">
               {profile.bio === null ? '"No bio provided."' : profile.bio}
             </Typography>
           </CardContent>

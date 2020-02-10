@@ -83,7 +83,12 @@ class ShareItemForm extends Component {
                       submitting,
                       invalid
                     }) => (
-                      <form onSubmit={handleSubmit}>
+                      <form
+                        onSubmit={event => {
+                          handleSubmit(event);
+                          resetPreview();
+                        }}
+                      >
                         <FormSpy
                           subscription={{ values: true }}
                           onChange={({ values }) => {

@@ -13,7 +13,7 @@ class ProfileContainer extends Component {
         {({ viewer }) => (
           <Query
             query={ALL_USER_ITEMS_QUERY}
-            variables={{ id: this.props.match.params.user || viewer.id }}
+            variables={{ id: this.props.match.params.userid || viewer.id }}
           >
             {({ loading, error, data }) => {
               if (loading) return <FullScreenLoader />;
@@ -27,8 +27,8 @@ class ProfileContainer extends Component {
   }
 }
 
-Profile.propTypes = {
-  profile: PropTypes.object.isRequired,
+ProfileContainer.propTypes = {
+  profile: PropTypes.object,
   match: PropTypes.object.isRequired
 };
 

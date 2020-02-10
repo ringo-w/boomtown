@@ -25,7 +25,7 @@ class ItemsContainer extends Component {
 }
 
 ItemsContainer.propTypes = {
-  viewer: PropTypes.object.isRequired
+  viewer: PropTypes.object
 };
 
 export default ItemsContainer;
