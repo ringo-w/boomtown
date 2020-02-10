@@ -4,6 +4,7 @@ import FullScreenLoader from "../../components/FullScreenLoader";
 import { Query } from "react-apollo";
 import { ALL_ITEMS_QUERY } from "../../apollo/queries";
 import { ViewerContext } from "../../context/ViewerProvider";
+import PropTypes from "prop-types";
 
 class ItemsContainer extends Component {
   render() {
@@ -22,5 +23,9 @@ class ItemsContainer extends Component {
     );
   }
 }
+
+ItemsContainer.propTypes = {
+  viewer: PropTypes.object.isRequired
+};
 
 export default ItemsContainer;

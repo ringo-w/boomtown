@@ -7,14 +7,7 @@ const ShareItemPreview = ({ classes }) => {
     <ItemPreviewContext.Consumer>
       {({ state }) => (
         <div>
-          <ItemCard
-            item={state} // make sure image is not clickable by
-            removing
-            it
-            on
-            form
-            preview
-          />
+          <ItemCard item={state} />
         </div>
       )}
     </ItemPreviewContext.Consumer>

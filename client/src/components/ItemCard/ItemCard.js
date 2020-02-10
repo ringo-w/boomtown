@@ -11,6 +11,7 @@ import styles from "./styles";
 import { withStyles } from "@material-ui/styles";
 import moment from "moment";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 class ItemCard extends Component {
   render() {
@@ -71,5 +72,10 @@ class ItemCard extends Component {
     );
   }
 }
+
+ItemCard.propTypes = {
+  classes: PropTypes.object.isRequired,
+  item: PropTypes.object.isRequired
+};
 
 export default withStyles(styles)(ItemCard);

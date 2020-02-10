@@ -3,6 +3,7 @@ import { withStyles } from "@material-ui/styles";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import styles from "./styles";
 import { Typography } from "@material-ui/core";
+import PropTypes from "prop-types";
 
 function CircularDeterminate(props) {
   const [progress, setProgress] = React.useState(0);
@@ -39,4 +40,9 @@ function CircularDeterminate(props) {
     </div>
   );
 }
+
+CircularDeterminate.propTypes = {
+  classes: PropTypes.object.isRequired
+};
+
 export default withStyles(styles)(CircularDeterminate);

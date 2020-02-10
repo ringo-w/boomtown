@@ -16,7 +16,7 @@ import Link from "@material-ui/core/Link";
 import { Mutation } from "react-apollo";
 import { LOGOUT_MUTATION, VIEWER_QUERY } from "../../apollo/queries";
 import { withRouter } from "react-router";
-import { Typography } from "@material-ui/core";
+import PropTypes from "prop-types";
 
 function NavBar(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -37,7 +37,7 @@ function NavBar(props) {
         refetchQueries={[{ query: VIEWER_QUERY }]}
       >
         {logout => (
-          <AppBar className={classes.nav}>
+          <AppBar position="sticky" className={classes.nav}>
             <Toolbar className={classes.addSpace}>
               <IconButton edge="start" href="/items">
                 <img src={logo} alt="boomtown" className={classes.logo} />
@@ -104,4 +104,8 @@ function NavBar(props) {
   );
 }
 
+NavBar.propTypes = {
+  classes: PropTypes.object.isRequired,
+  logoutMutation: PropTypes.func.isRequired
+};
 export default withRouter(withStyles(styles)(NavBar));

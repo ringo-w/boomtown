@@ -4,6 +4,7 @@ import styles from "./styles";
 import { withStyles } from "@material-ui/styles";
 import ItemCard from "../ItemCard";
 import { Card, CardContent, Typography, Grid } from "@material-ui/core";
+import PropTypes from "prop-types";
 
 class ProfileCard extends Component {
   render() {
@@ -39,23 +40,14 @@ class ProfileCard extends Component {
             ))}
           </Grid>
         </Grid>
-
-        <Typography>
-          {profile.borrowed.id}
-          Borrowed Items
-        </Typography>
-        <Grid container spacing={3}>
-          {profile.borrowed.map(item => {
-            return (
-              <Grid key={item.id} xs={12}>
-                <ItemCard profile={profile} viewer={viewer} item={item} />
-              </Grid>
-            );
-          })}
-        </Grid>
       </div>
     );
   }
 }
 
+ProfileCard.propTypes = {
+  classes: PropTypes.object.isRequired,
+  viewer: PropTypes.object.isRequired,
+  profile: PropTypes.object.isRequired
+};
 export default withStyles(styles)(ProfileCard);

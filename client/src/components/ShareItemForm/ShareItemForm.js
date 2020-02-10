@@ -14,6 +14,9 @@ import { ItemPreviewContext } from "../../context/ItemPreviewProvider";
 import { Mutation } from "react-apollo";
 import { ADD_ITEM_MUTATION } from "../../apollo/queries";
 import { withRouter } from "react-router";
+import validate from "./helpers/validation";
+import PropTypes from "prop-types";
+import ShareItemPreview from "../ShareItemFormPreview/ShareItemFormPreview";
 
 class ShareItemForm extends Component {
   validate = values => {
@@ -68,11 +71,12 @@ class ShareItemForm extends Component {
                             }
                           }
                         });
-                        history.push("/profile");
+                        await history.push("/profile");
                       } catch (err) {
                         throw new Error(err);
                       }
                     }}
+                    validate={validate.bind(this)}
                     render={({
                       handleSubmit,
                       pristine,
@@ -222,5 +226,10 @@ class ShareItemForm extends Component {
     );
   }
 }
+
+ShareItemForm.propTypes = {
+  classes: PropTypes.object.isRequired,
+  tags: PropTypes.array.isRequired
+};
 
 export default withRouter(withStyles(styles)(ShareItemForm));

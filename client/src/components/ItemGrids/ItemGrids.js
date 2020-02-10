@@ -3,6 +3,7 @@ import ItemCard from "../ItemCard/ItemCard";
 import Grid from "@material-ui/core/Grid";
 import styles from "./styles";
 import { withStyles } from "@material-ui/styles";
+import PropTypes from "prop-types";
 
 class ItemGrids extends Component {
   render() {
@@ -20,4 +21,8 @@ class ItemGrids extends Component {
     );
   }
 }
+
+ItemGrids.propTypes = {
+  items: PropTypes.array.isRequired
+};
 export default withStyles(styles)(ItemGrids);

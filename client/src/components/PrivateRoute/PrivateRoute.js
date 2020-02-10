@@ -1,6 +1,6 @@
 import { Route, Redirect } from "react-router-dom";
 import React from "react";
-
+import PropTypes from "prop-types";
 import { ViewerContext } from "../../context/ViewerProvider";
 
 const PrivateRoute = (
@@ -25,4 +25,10 @@ const PrivateRoute = (
     )}
   </ViewerContext.Consumer>
 );
+
+PrivateRoute.propTypes = {
+  Component: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
+  rest: PropTypes.object.isRequired
+};
 export default PrivateRoute;

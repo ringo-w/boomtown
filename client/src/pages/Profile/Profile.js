@@ -2,6 +2,7 @@ import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import styles from "./styles";
 import ProfileCard from "../../components/ProfileCard";
+import PropTypes from "prop-types";
 
 const Profile = ({ profile, viewer }) => {
   return (
@@ -11,4 +12,8 @@ const Profile = ({ profile, viewer }) => {
   );
 };
 
+Profile.propTypes = {
+  profile: PropTypes.object.isRequired,
+  viewer: PropTypes.object.isRequired
+};
 export default withStyles(styles)(Profile);

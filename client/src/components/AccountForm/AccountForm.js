@@ -15,6 +15,7 @@ import {
 } from "../../apollo/queries";
 import { Mutation } from "react-apollo";
 import styles from "./styles";
+import PropTypes from "prop-types";
 
 const refetchQueries = [{ query: VIEWER_QUERY }];
 
@@ -157,5 +158,10 @@ class AccountForm extends Component {
     );
   }
 }
+AccountForm.propTypes = {
+  classes: PropTypes.object.isRequired,
+  loginMutation: PropTypes.func.isRequired,
+  signupMutation: PropTypes.func.isRequired
+};
 
 export default withStyles(styles)(AccountForm);

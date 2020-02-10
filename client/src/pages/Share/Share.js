@@ -3,6 +3,7 @@ import { withStyles } from "@material-ui/core/styles";
 import styles from "./styles";
 import ShareItemForm from "../../components/ShareItemForm";
 import ShareItemFormPreview from "../../components/ShareItemFormPreview";
+import PropTypes from "prop-types";
 
 const Share = props => {
   const { classes, tags } = props;
@@ -14,6 +15,11 @@ const Share = props => {
       </div>
     </div>
   );
+};
+
+Share.propTypes = {
+  tags: PropTypes.array.isRequired,
+  classes: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(Share);
