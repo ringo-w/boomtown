@@ -25,7 +25,7 @@ class ItemCard extends Component {
         <CardActionArea>
           <Link
             to={
-              item && item.itemowner.id ? `/profile/${item.itemowner.id}` : ""
+              item && item.itemowner.id ? `/profile/${item.itemowner.id}` : null
             }
             className={classes.link}
           >
