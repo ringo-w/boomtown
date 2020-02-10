@@ -23,7 +23,12 @@ class ItemCard extends Component {
     return (
       <Card className={classes.card}>
         <CardActionArea>
-          <Link to={`/profile/${item.itemowner.id}`} className={classes.link}>
+          <Link
+            to={
+              item && item.itemowner.id ? `/profile/${item.itemowner.id}` : ""
+            }
+            className={classes.link}
+          >
             <CardMedia
               className={classes.media}
               image="https://picsum.photos/350/400"
@@ -68,14 +73,16 @@ class ItemCard extends Component {
           </Link>
         </CardActionArea>
         <CardActions>
-          <Button
-            size="large"
-            color="secondary"
-            variant="outlined"
-            className={location.pathname.match(/items/) ? "block" : "none"}
-          >
-            Borrow
-          </Button>
+          {location.pathname === "/items" && (
+            <Button
+              size="large"
+              color="secondary"
+              variant="outlined"
+              className={location.pathname.match(/items/) ? "block" : "none"}
+            >
+              Borrow
+            </Button>
+          )}
         </CardActions>
       </Card>
     );
