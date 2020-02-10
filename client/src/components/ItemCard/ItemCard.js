@@ -12,10 +12,12 @@ import { withStyles } from "@material-ui/styles";
 import moment from "moment";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import { withRouter } from "react-router-dom";
 
 class ItemCard extends Component {
   render() {
-    let { item, classes } = this.props;
+    let { item, classes, location } = this.props;
+
     return (
       <Card className={classes.card}>
         <CardActionArea>
@@ -64,7 +66,12 @@ class ItemCard extends Component {
           </Link>
         </CardActionArea>
         <CardActions>
-          <Button size="large" color="secondary" variant="outlined">
+          <Button
+            size="large"
+            color="secondary"
+            variant="outlined"
+            className={location.pathname.match(/items/) ? "block" : "none"}
+          >
             Borrow
           </Button>
         </CardActions>
@@ -78,4 +85,4 @@ ItemCard.propTypes = {
   item: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(ItemCard);
+export default withRouter(withStyles(styles)(ItemCard));

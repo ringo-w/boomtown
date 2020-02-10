@@ -106,6 +106,6 @@ function NavBar(props) {
 
 NavBar.propTypes = {
   classes: PropTypes.object.isRequired,
-  logoutMutation: PropTypes.func.isRequired
+  logoutMutation: PropTypes.func
 };
 export default withRouter(withStyles(styles)(NavBar));
