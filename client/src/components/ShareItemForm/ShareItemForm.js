@@ -59,7 +59,7 @@ class ShareItemForm extends Component {
                             }
                           }
                         });
-                        await history.push("/profile");
+                        history.push("/profile");
                       } catch (err) {
                         throw new Error(err);
                       }
