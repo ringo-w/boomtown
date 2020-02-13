@@ -28,10 +28,6 @@ const styles = () =>
     },
     roundBorder: {
       borderRadius: 50
-      // },
-      // sideBySide: {
-      //   display: "grid",
-      //   gridTemplateColumns: "1fr 1fr"
     }
   });
 

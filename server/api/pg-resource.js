@@ -57,16 +57,6 @@ module.exports = postgres => {
           throw new Error(err);
         }
       }
-
-      /**
-       *  Refactor the following code using the error handling logic described above.
-       *  When you're done here, ensure all of the resource methods in this file
-       *  include a try catch, and throw appropriate errors.
-       *
-       *  Ex: If the user is not found from the DB throw 'User is not found'
-       *  If the password is incorrect throw 'User or Password incorrect'
-       */
-      // -------------------------------
     },
     async getItems(idToOmit) {
       try {
