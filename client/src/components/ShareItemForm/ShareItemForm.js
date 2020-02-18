@@ -25,6 +25,7 @@ class ShareItemForm extends Component {
         if (t.title === tag) {
           updatedTag.id = t.id;
         }
+        return true;
       });
       return updatedTag;
     });
