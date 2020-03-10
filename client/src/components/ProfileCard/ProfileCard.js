@@ -9,6 +9,7 @@ import ItemGrid from "../ItemGrids";
 class ProfileCard extends Component {
   render() {
     const { profile, classes } = this.props;
+    console.log(this.props);
     return (
       <div className={classes.pad}>
         <Card className={classes.card}>
@@ -42,6 +43,12 @@ class ProfileCard extends Component {
 
 ProfileCard.propTypes = {
   classes: PropTypes.object.isRequired,
-  profile: PropTypes.object.isRequired
+  profile: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    fullname: PropTypes.string.isRequired,
+    item: PropTypes.arrayOf(PropTypes.object.isRequired),
+    borrowed: PropTypes.array.isRequired
+  })
 };
 export default withStyles(styles)(ProfileCard);

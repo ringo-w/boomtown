@@ -62,20 +62,15 @@ class AccountForm extends Component {
                         <InputLabel htmlFor="fullname">Username</InputLabel>
                         <Field name="fullname">
                           {({ input, meta }) => (
-                            <>
-                              <Input
-                                id="fullname"
-                                type="text"
-                                inputProps={{
-                                  ...input,
-                                  autoComplete: "off"
-                                }}
-                                value={input.value}
-                              />
-                              {meta.touched && meta.error && (
-                                <span>{meta.error}</span>
-                              )}
-                            </>
+                            <Input
+                              id="fullname"
+                              type="text"
+                              inputProps={{
+                                ...input,
+                                autoComplete: "off"
+                              }}
+                              value={input.value}
+                            />
                           )}
                         </Field>
                       </FormControl>
