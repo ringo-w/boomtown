@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import Gravatar from "react-gravatar";
 import styles from "./styles";
 import { withStyles } from "@material-ui/styles";
-import ItemCard from "../ItemCard";
-import { Card, CardContent, Typography, Grid } from "@material-ui/core";
+import { Card, CardContent, Typography } from "@material-ui/core";
 import PropTypes from "prop-types";
+import ItemGrid from "../ItemGrids";
 
 class ProfileCard extends Component {
   render() {
@@ -31,18 +31,10 @@ class ProfileCard extends Component {
           </CardContent>
         </Card>
 
-        <Grid item xs="auto">
-          <Typography color="primary" variant="h4" className={classes.title}>
-            Shared Items
-          </Typography>
-          <Grid container justify="center" spacing={3}>
-            {profile.items.map(item => (
-              <Grid key={item.id} item>
-                <ItemCard item={item} />
-              </Grid>
-            ))}
-          </Grid>
-        </Grid>
+        <Typography color="primary" variant="h4" className={classes.title}>
+          Shared Items
+        </Typography>
+        <ItemGrid items={profile.items} />
       </div>
     );
   }

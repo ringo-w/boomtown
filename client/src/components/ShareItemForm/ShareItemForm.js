@@ -206,7 +206,6 @@ class ShareItemForm extends Component {
                             className={classes.shareButton}
                             type="submit"
                             disabled={pristine || submitting || invalid}
-                            // href="/profile"
                           >
                             Share
                           </Button>
@@ -225,8 +224,9 @@ class ShareItemForm extends Component {
 }
 
 ShareItemForm.propTypes = {
-  classes: PropTypes.object.isRequired,
-  tags: PropTypes.array.isRequired
+  classes: PropTypes.objectOf(PropTypes.string.isRequired).isRequired,
+  tags: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
+  history: PropTypes.object
 };
 
 export default withRouter(withStyles(styles)(ShareItemForm));

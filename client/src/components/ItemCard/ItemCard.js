@@ -19,6 +19,7 @@ import { withRouter } from "react-router-dom";
 class ItemCard extends Component {
   render() {
     let { item, classes, location } = this.props;
+    console.log(this.props);
 
     return (
       <Card className={classes.card}>
@@ -90,8 +91,9 @@ class ItemCard extends Component {
 }
 
 ItemCard.propTypes = {
-  classes: PropTypes.object.isRequired,
-  item: PropTypes.object.isRequired
+  classes: PropTypes.objectOf(PropTypes.string.isRequired).isRequired,
+  item: PropTypes.object.isRequired,
+  location: PropTypes.object
 };
 
 export default withRouter(withStyles(styles)(ItemCard));
